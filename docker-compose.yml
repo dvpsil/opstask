@@ -1,0 +1,14 @@
+version: "3"
+services:
+  app:
+    image: app
+    build: ops-exercise/.
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+  db:
+    image: db
+    build: ops-exercise/db/.
+    ports:
+      - "27017:27017"
